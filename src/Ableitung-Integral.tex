@@ -1,0 +1,17 @@
+\subsubsection{partielle Ableitung}
+Eine Skalarfeld $f:\Omega \rightarrow \mathbb R$ mit offener Menge $\Omega$ ist partiell differenzierbar nach $x_i$ (einem ihrere Argumente), wenn der folgende Grenzwert existiert
+\begin{equation*}
+    \frac{\delta f}{\delta x_i}(x)=\lim_{h\rightarrow 0}\frac{f(x_1,...,x_i+h,...,x_n)-f(x_1,...,x_n)}{h}
+\end{equation*}
+
+\textbf{$f$ stetig differenzierbar} auf $\Omega$: Falls alle partiellen Ableitungen von $f$ auf $\Omega$ stetig sind ($f \in C^1(\Omega)$)
+
+\subsubsection{Gradient}
+Vektor, welcher zur maximalen Steigung des Skalarfeldes zeigt
+\begin{equation*}
+    \nabla f(x_0)=\begin{pmatrix}
+        \delta_{x_1}f(x_0) \\
+        \vdots \\
+        \delta_{x_n}f(x_0)
+    \end{pmatrix}
+\end{equation*}
