@@ -1,0 +1,72 @@
+\documentclass[german, fourcolumn, 8pt]{latex4ei/latex4ei_sheet}
+\usepackage{latex4ei}
+\usepackage{latex4ei_boxes}
+
+% UPDATE WITHOUT CLASS CHANGE
+% ----------------------------------------------------------------------
+
+% LastPage
+\usepackage{lastpage}
+
+% Allow hyperlinks
+	\RequirePackage[pagebackref=true,pdfpagelabels]{hyperref}
+	
+% Colors
+	\RequirePackage{latex4ei/latex4ei_colors}
+	\colorlet{col_link}{tum_blue_dark}
+    \colorlet{col_sectionbox}{tum_gray}
+	\hypersetup{
+		colorlinks=true,
+		linkcolor=col_link,
+		urlcolor=col_link,
+		citecolor=col_link,
+}
+% ----------------------------------------------------------------------
+
+% set pdfoptions
+\AtBeginDocument{
+	\hypersetup{
+		pdftitle={Schaltungstheorie},
+        pdfauthor={LaTeX4EI},
+        pdfcreator={LaTeX4EI template (www.latex4ei.de)},
+        pdfkeywords={latex4ei}
+    }
+}
+
+% Header and Footer
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\headrulewidth}{0.0pt} %obere Linie ausblenden
+\renewcommand{\footrulewidth}{0.0pt} %obere Linie ausblenden
+
+
+% Custom Commands
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\newcommand{\me}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\dme}[2]{\ensuremath{\left\{#1\,\vert\,#2 \right\}}}
+\newcommand{\un}[1]{\; \unit{#1} }
+\newcommand{\unf}[2]{\;\left[ \unitfrac{#1}{#2} \right]}
+\newcommand{\enbrace}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\nira}[1]{\ensuremath{\overset{n \rightarrow \infty}{\longrightarrow}}}
+\newcommand{\os}[2]{\ensuremath{\overset{#1}{#2}}}
+\newcommand{\gk}[1]{\ensuremath{\left\lfloor#1\right\rfloor}}
+
+%Custom functions
+\DeclareMathOperator{\arccot}{arccot}
+
+\begin{document}
+\titlespacing*{\subsubsection} {0pt}{0.5ex}{2.0ex}
+\titlespacing*{\subsection} {0pt}{0.5ex}{2.0ex}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+
+\vspace{-4mm}
+\subsection{Allgemeines}
+\input{src/Allgemeines.tex}
+
+\label{LastPage}
+
+\end{document}
