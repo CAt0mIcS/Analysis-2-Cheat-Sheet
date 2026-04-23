@@ -1,10 +1,13 @@
-\subsubsection{partielle Ableitung}
-Eine Skalarfeld $f:\Omega \rightarrow \mathbb R$ mit offener Menge $\Omega$ ist partiell differenzierbar nach $x_i$ (einem ihrere Argumente), wenn der folgende Grenzwert existiert
-\begin{equation*}
-    \frac{\delta f}{\delta x_i}(x)=\lim_{h\rightarrow 0}\frac{f(x_1,...,x_i+h,...,x_n)-f(x_1,...,x_n)}{h}
-\end{equation*}
 
-\textbf{$f$ stetig differenzierbar} auf $\Omega$: Falls alle partiellen Ableitungen von $f$ auf $\Omega$ stetig sind ($f \in C^1(\Omega)$)
+\begin{sectionbox}
+    \subsubsection{partielle Ableitung}
+    Eine Skalarfeld $f:\Omega \rightarrow \mathbb R$ mit offener Menge $\Omega$ ist partiell differenzierbar nach $x_i$ (einem ihrere Argumente), wenn der folgende Grenzwert existiert
+    \begin{equation*}
+        \frac{\delta f}{\delta x_i}(x)=\lim_{h\rightarrow 0}\frac{f(x_1,...,x_i+h,...,x_n)-f(x_1,...,x_n)}{h}
+    \end{equation*}
+
+    \textbf{$f$ stetig differenzierbar} auf $\Omega$: Falls alle partiellen Ableitungen von $f$ auf $\Omega$ stetig sind ($f \in C^1(\Omega)$)
+\end{sectionbox}
 
 \subsubsection{Gradient}
 Vektor, welcher zur maximalen Steigung des Skalarfeldes zeigt
@@ -15,3 +18,29 @@ Vektor, welcher zur maximalen Steigung des Skalarfeldes zeigt
         \delta_{x_n}f(x_0)
     \end{pmatrix}
 \end{equation*}
+
+\subsubsection{Fréchet (totale) Differenzierbarkeit}
+$f: \Omega \rightarrow \mathbb R$ ist total differenzierbar, wenn gilt
+\begin{align*}
+    f(x+d)=f(x)+b^Td+o(||d||) \Longleftrightarrow \\
+    \lim_{||d|| \rightarrow 0}\frac{f(x+d)-f(x)-b^Td}{||d||}=0
+\end{align*}
+
+\begin{sectionbox}
+    \textbf{Wichtige Sätze total diffbarer Skalarfelder}
+    \begin{itemize}
+        \item In $x$ total diffbar $\Rightarrow$ In $x$ partiell diffbar und $b=\nabla f(x)$
+        \item In $x$ total diffbar $\Rightarrow$ In $x$ stetig
+        \item In $x$ total diffbar $\Rightarrow f$ in $x$ richtungsdiffbar und es gilt $\delta_d f(x)=\nabla f(x)^Td$
+        \item $g(x;d)=f(x)+\nabla f(x)^Td$ ist die Tangente in $x$
+        \item $f$ stetig diffbares Skalarfeld $\Rightarrow f$ auf $\Omega$ Fréchet diffbar
+        \item Verknüpfungen total diffbarer Funktionen sind weiterhin total diffbar
+    \end{itemize}
+\end{sectionbox}
+
+\subsubsection{Richtungsdifferenzierbarkeit}
+Beschreibt die Ableitung entlang eines Richtungsvektors $d$. Partielle Ableitungen sind Richtungsableitungen entlang einer der Achsen (mit Einheitsvektor als Richtungsvektor)
+\begin{equation*}
+    \delta_df(x)=\lim_{h\rightarrow 0}\frac{f(x+hd)-f(x)}{h} \qquad d \in \mathbb R^n
+\end{equation*}
+muss für jede Richtung $d$ gelten
