@@ -1,0 +1,79 @@
+Vektorfeld $f: \Omega \subset \mathbb R^n \rightarrow \mathbb R^m$ besteht aus $m$ Komponentenfunktionen $f_i : \Omega \rightarrow \mathbb R$ (Skalarfelder).
+
+\subsection{Definitionen}
+\begin{description}
+    \item[stetig in $x_0$] Alle $f_i$ stetig in $x_0$
+    \item[partiell diffbar in $x_0 \in \Omega$] Alle $f_i$ partiell diffbar in $x_0$
+    \item[stetig diffbar] Alle $f_i$ stetig diffbar 
+\end{description}
+
+\subsection{Jacobi-Matrix}
+Für partiell diffbares Vektorfeld gilt:
+\begin{equation*}
+    J_f(x)=\begin{pmatrix}
+        \partial x_1 f_1(x) & \dots & \partial x_nf_1(x) \\
+        \partial x_1 f_2(x) & \dots & \partial x_nf_2(x) \\
+        \vdots & \ddots & \vdots \\
+        \partial x_1 f_m(x)  & \dots & \partial x_nf_m(x) \\
+    \end{pmatrix} = \begin{pmatrix}
+        \nabla f_1(x)^\top \\ 
+        \nabla f_2(x)^\top \\
+        \vdots \\
+        \nabla f_m(x)^\top
+    \end{pmatrix}
+\end{equation*}
+
+\subsubsection{Gradientenfeld}
+Der Gradient eines Skalarfeldes ist ein Vektorfeld. \textbf{Es gilt}: \\
+\hspace*{.1\textwidth}$J_{\nabla g}(x)=H_g(x)$
+
+\subsection{Fréchet-Diffbarkeit $Df(x)$ am festen Punkt $x$}
+\begin{equation*}
+    \begin{split}
+        &f(x+h)=f(x)+Df(x)(h) + o(||h||) \\
+        &Df(x)(h)=J_f(x)h
+    \end{split}
+\end{equation*}
+
+
+$Df(x)(h)$ ist hier eine linerare Abbildung (Approximation) am Punkt $x$ mit der Variable $h$
+
+\subsection{Rechenregeln}
+\subsubsection{Produktregel}
+$f,g \in \Omega \subset \mathbb R^n \rightarrow \mathbb R^m$ partiell diffbar, $h(x) = f(x)^\top g(x)$ auch partiell diffbar und es gilt:
+\begin{equation*}
+	J_h(x)=g(x)^\top J_f(x)+f(x)^\top J_g(x)
+\end{equation*}
+
+\subsubsection{Kettenregel}
+$f: \Omega \rightarrow \mathbb R^n, g: D \rightarrow \mathbb R^m, h=g \circ f$
+\begin{equation*}
+	Dh(x)=Dg(f(x))\circ Df(x) \qquad J_h(x)=J_g(f(x))J_f(x)
+\end{equation*}
+
+\subsubsection{Differentialoperatoren \qquad $\div(\rot(f)) = 0$}
+\begin{tabular}{l|l}
+	Operator                                                                     & Definition                                                                                                                                                  \\ \midrule
+	\pbox{3.0cm}{ Gradient: $\mathrm{grad}\; f$ \\ S-Feld $\rightarrow$ V-Feld } & $\nabla f = \vect{\partial_1 f \\ \svdots \\ \partial_n f}$                                                                                                 \\ \midrule
+	\pbox{3.0cm}{ Divergenz: $\mathrm{div}\; f$ \\ V-Feld $\rightarrow$ S-Feld } & ${\displaystyle \nabla \bdot f = \sum\limits_{i=0}^n \partial_i f_i}$                                                                                  \\ \midrule % \vect{\frac{\partial}{\partial x_1} \\ \svdots \\ \frac{\partial}{\partial x_n} }^\top \bdot \vect{ f_1 \\ \svdots \\ f_n }$ \\ \midrule
+	\pbox{3.0cm}{ Rotation: $\mathrm{rot}\; f$  \\ V-Feld $\rightarrow$ V-Feld } & $\nabla \times f = \vect{\partial_2 f_3(x) - \partial_3 f_2(x) \\[2pt] \partial_3 f_1(x) -\partial_1 f_3(x) \\[2pt] \partial_1 f_2(x) -\partial_2 f_1(x) }$ \\ \midrule
+	\pbox{3.0cm}{ Laplace: $\Delta\; f$         \\ S-Feld $\rightarrow$ S-Feld } & ${\displaystyle\underset{\nabla \cdot (\nabla f)}{\nabla^2} = \sum \partial_i^2 f}$                                                                    % \vect{\frac{\partial}{\partial x_1} \\ \svdots \\ \frac{\partial}{\partial x_n} }^\top \cdot \vect{\frac{\partial f}{\partial x_1} \\ \svdots \\ \frac{\partial f}{\partial x_n} }$ \\
+\end{tabular}
+
+\section{Krummlinige Koordinaten}
+Transformationsvektoren (Um einen Vektor in anderen Koordinaten darzustellen):\\
+\begin{tabular}{c | c  l}
+	         & $(x, y, [z])^\top=F(u)=$                                                                                                                &                                                                            \\ \midrule
+    Polar    & $\begin{pmatrix} \cos(\varphi) & -r\sin(\varphi) \\ \sin(\varphi) & r\cos(\varphi) \end{pmatrix}$ & $0 \le \varphi < 2\pi$             \\
+	Zylinder & $\begin{pmatrix} r\cos (\varphi) \\ r\sin (\varphi) \\ z \end{pmatrix}$                                            & $0 \le \varphi < 2 \pi$                                                    \\
+	Kugel    & $\begin{pmatrix} r\cos(\varphi) \sin(\theta) \\ r\sin(\varphi) \sin(\theta) \\ r\cos(\theta) \end{pmatrix}$ & $\begin{matrix}0 \le \varphi < 2 \pi \\ 0 \le \theta \le \pi \end{matrix}$
+\end{tabular}
+
+\subsection{Transformationen}
+Koordinaten $x=(x,y,z,...) \in \mathbb R^n$ in karthesischer Darstellung werden durch eine Abbildung $F:\mathbb R^n \rightarrow \mathbb R^n, x=F(u)$ dargestellt, wobei $u$ die Koordinaten in anderer Basis sind (z.B. Kugel)
+\begin{description}
+    \item[regulär] Punkt, in welchem $\det_F(u)\ne 0$
+    \item[lokale Basisvektoren] Spalten $c_1,...,c_n$ von $J_F(u)$, abhängig vom Punkt $u$ bzw. $x$
+    \item[Maßfaktor] Länge der Basisvektoren: $h_i=||c_i||$
+    \item[orthogonale Koordinaten] Basisvektoren sind alle orthogonal zueinander $\Rightarrow B=\begin{pmatrix}\frac{1}{h_1}c_1 & \dots & \frac{1}{h_n}c_n\end{pmatrix}$ ist Orthogonalmatrix ($B^\top=B^{-1}$)
+\end{description}

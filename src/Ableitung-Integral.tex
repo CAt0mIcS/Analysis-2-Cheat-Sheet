@@ -3,7 +3,7 @@
     \subsubsection{partielle Ableitung}
     Eine Skalarfeld $f:\Omega \rightarrow \mathbb R$ mit offener Menge $\Omega$ ist partiell differenzierbar nach $x_i$ (einem ihrere Argumente), wenn der folgende Grenzwert existiert
     \begin{equation*}
-        \frac{\delta f}{\delta x_i}(x)=\lim_{h\rightarrow 0}\frac{f(x_1,...,x_i+h,...,x_n)-f(x_1,...,x_n)}{h}
+        \frac{\partial f}{\partial x_i}(x)=\lim_{h\rightarrow 0}\frac{f(x_1,...,x_i+h,...,x_n)-f(x_1,...,x_n)}{h}
     \end{equation*}
 
     \textbf{$f$ stetig differenzierbar} auf $\Omega$: Falls alle partiellen Ableitungen von $f$ auf $\Omega$ stetig sind ($f \in C^1(\Omega)$)
@@ -11,28 +11,21 @@
 
 \subsubsection{Gradient}
 Vektor, welcher zur maximalen Steigung des Skalarfeldes zeigt
-\begin{equation*}
-    \nabla f(x_0)=\begin{pmatrix}
-        \delta_{x_1}f(x_0) \\
-        \vdots \\
-        \delta_{x_n}f(x_0)
-    \end{pmatrix}
-\end{equation*}
 
 \subsubsection{Fréchet (totale) Differenzierbarkeit}
-$f: \Omega \rightarrow \mathbb R$ ist total differenzierbar, wenn gilt
+$f: \Omega \rightarrow \mathbb R$ ist genau dann total differenzierbar, wenn
 \begin{align*}
-    f(x+d)=f(x)+b^Td+o(||d||) \Longleftrightarrow \\
-    \lim_{||d|| \rightarrow 0}\frac{f(x+d)-f(x)-b^Td}{||d||}=0
+    f(x+d)=f(x)+\nabla f(x)^\top d+o(||d||) \Longleftrightarrow \\
+    \lim_{||d|| \rightarrow 0}\frac{f(x+d)-f(x)-\nabla f(x)^\top d}{||d||}=0
 \end{align*}
 
 \begin{sectionbox}
     \textbf{Wichtige Sätze total diffbarer Skalarfelder}
     \begin{itemize}
-        \item In $x$ total diffbar $\Rightarrow$ In $x$ partiell diffbar und $b=\nabla f(x)$
+        \item In $x$ stetig diffbar ($\nabla f(x)$ stetig) $\Rightarrow$ In $x$ stetig Fréchet diffbar ( $\Rightarrow$ Nicht partiell diffbar $\Rightarrow$ nicht Fréchet diffbar)
         \item In $x$ total diffbar $\Rightarrow$ In $x$ stetig
-        \item In $x$ total diffbar $\Rightarrow f$ in $x$ richtungsdiffbar und es gilt $\delta_d f(x)=\nabla f(x)^Td$
-        \item $g(x;d)=f(x)+\nabla f(x)^Td$ ist die Tangente in $x$
+        \item In $x$ total diffbar $\Rightarrow f$ in $x$ richtungsdiffbar und es gilt $\partial_d f(x)=\nabla f(x)^\top d$
+        \item $g(x;d)=f(x)+\nabla f(x)^\top d$ ist die Tangente in $x$
         \item $f$ stetig diffbares Skalarfeld $\Rightarrow f$ auf $\Omega$ Fréchet diffbar
         \item Verknüpfungen total diffbarer Funktionen sind weiterhin total diffbar
     \end{itemize}
@@ -41,6 +34,34 @@ $f: \Omega \rightarrow \mathbb R$ ist total differenzierbar, wenn gilt
 \subsubsection{Richtungsdifferenzierbarkeit}
 Beschreibt die Ableitung entlang eines Richtungsvektors $d$. Partielle Ableitungen sind Richtungsableitungen entlang einer der Achsen (mit Einheitsvektor als Richtungsvektor)
 \begin{equation*}
-    \delta_df(x)=\lim_{h\rightarrow 0}\frac{f(x+hd)-f(x)}{h} \qquad d \in \mathbb R^n
+    \partial_df(x)=\lim_{h\rightarrow 0}\frac{f(x+hd)-f(x)}{h} \qquad d \in \mathbb R^n
 \end{equation*}
 muss für jede Richtung $d$ gelten
+
+\subsubsection{Hessematrix}
+Matrix partieller Ableitung 2. Ordnung
+\begin{equation*}
+    H_f(x)=\nabla^2f(x)=\begin{pmatrix}\partial x_1\partial x_1 f(x)  & \dots  & \partial x_n \partial x_1 f(x) \\
+               \vdots                     & \ddots & \vdots                     \\
+               \partial x_1 \partial x_n f(x) & \dots  & \partial x_n \partial x_n f(x)\end{pmatrix}
+\end{equation*}
+
+\begin{sectionbox}
+    \begin{itemize}
+        \item $f \in C^2(\Omega) \Rightarrow H_f(x)$ symmetrisch: $H_f(x)=H_f(x)^\top$
+        \item $f \in C^m(\Omega) \Rightarrow$ Alle partiellen Ableitungen/Richtungsableitungen hängen bis zur Stufe $m$ nicht von der Reihenfolge ab
+    \end{itemize}
+\end{sectionbox}
+
+\subsubsection{Taylorentwicklung bei Skalarfeldern}
+$m=1:$
+\begin{equation*}
+    f(a+h)=\underbrace{f(a)+\nabla f(a)^\top h}_{T_1(a;a+h)}+O(||h||^2)
+\end{equation*}
+
+$m=2:$
+\begin{align*}
+    T_2(a;a+h)=f(a)+\nabla f(a)^\top h+\frac{1}{2}h^\top H_f(a)h \\
+    f \in C^2(\Omega): f(a+h)=T_2(a;a+h)+o(||h||^2)      \\
+    f \in C^3(\Omega): f(a+h)=T_2(a;a+h)+O(||h||^3)
+\end{align*}
