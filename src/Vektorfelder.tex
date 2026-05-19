@@ -63,3 +63,21 @@ $f: \Omega \rightarrow \mathbb R^n, g: D \rightarrow \mathbb R^m, h=g \circ f$
     \pbox{3.0cm}{ Laplace: $\Delta\; f$         \\ S-Feld $\rightarrow$ S-Feld } &
 \end{tabular}
 
+\subsection{Implizite Funktionen}
+Beispiel mit $F:\mathbb R^3 \rightarrow \mathbb R^2$ stetig diffbar $\rightarrow$ Man kann maximal nach $2$ Variablen auflösen
+\begin{enumerate}
+    \item Eine Lösung $(x_0,y_0,z_0)$ für die Gleichung $F(x,y,z)=0$ finden
+    \item $J_F(x_0,y_0,z_0)$ berechnen ein Teilmatrizen finden, welche invertierbar sind, z.B.:
+    \begin{equation*}
+    J_F(x_0,y_0,z_0)=\begin{pmatrix}
+        4 & 4 & 0 \\ \pi & \pi & \pi
+    \end{pmatrix}
+    \end{equation*}
+    $\rightarrow$ Man kann nach $(x,z)$ oder $(y,z)$ auflösen, damit die Teilmatrix invertierbar ist
+    \begin{equation*}
+        J_{F,(x,z)}=J_{F(y,z)}=\begin{pmatrix}
+            4 & 0 \\ \pi & \pi
+        \end{pmatrix}
+    \end{equation*}
+    \item Es gibt eine stetig diffbare Funktion $g(x_0)=\begin{pmatrix}y_0 \\ z_0\end{pmatrix}$ mit $F(x,g_1(x),g_2(x))=0$
+\end{enumerate}

@@ -31,6 +31,19 @@ $f: \Omega \rightarrow \mathbb R$ ist genau dann total differenzierbar, wenn
     \end{itemize}
 \end{sectionbox}
 
+\begin{sectionbox}
+    \subsubsection{Mittelwertsatz}
+    $\Omega \in \mathbb R^n$ offen, $f:\Omega \rightarrow \mathbb R$ stetig diffbar, $x,y \in \Omega$, sowie die Verbindungsstrecke zwischen $x,y$ in $\Omega$.
+    Dann gibt es ein $\xi\in [x,y]$, so dass 
+    \begin{equation*}
+        f(y)-f(x)=\nabla f(\xi)^T(y-x)
+    \end{equation*}
+    sowie die Abschätzung
+    \begin{equation*}
+        |f(y)-f(x)| \le C||y-x|| \qquad C=\max_{z \in [x,y]}||\nabla f(z)||
+    \end{equation*}
+\end{sectionbox}
+
 \subsubsection{Richtungsdifferenzierbarkeit}
 Beschreibt die Ableitung entlang eines Richtungsvektors $d$. Partielle Ableitungen sind Richtungsableitungen entlang einer der Achsen (mit Einheitsvektor als Richtungsvektor)
 \begin{equation*}
