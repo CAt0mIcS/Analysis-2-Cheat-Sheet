@@ -42,17 +42,19 @@ Der Gradient eines Skalarfeldes ist ein Vektorfeld. \textbf{Es gilt}: \\
 $Df(x)(h)$ ist hier eine linerare Abbildung (Approximation) am Punkt $x$ mit der Variable $h$
 
 \subsection{Rechenregeln}
-\subsubsection{Produktregel}
-$f,g \in \Omega \subset \mathbb R^n \rightarrow \mathbb R^m$ partiell diffbar, $h(x) = f(x)^\top g(x)$ auch partiell diffbar und es gilt:
-\begin{equation*}
-    J_h(x)=g(x)^\top J_f(x)+f(x)^\top J_g(x)
-\end{equation*}
+\subsubsection{Produktregeln}
+\begin{itemize}
+    \item $f,g \in \Omega \subset \mathbb R^n \rightarrow \mathbb R^m$ partiell diffbar, $h: \mathbb R^n \rightarrow \mathbb R, h(x) = f(x)^\top g(x)$ auch partiell diffbar und es gilt:
+        \begin{equation*}
+            J_h(x)=g(x)^\top J_f(x)+f(x)^\top J_g(x)
+        \end{equation*}
+    \item $f:\mathbb R^n \rightarrow \mathbb R, g:\mathbb R^n \rightarrow \mathbb R^m, h:\mathbb R^n \rightarrow \mathbb R^m, h(x)=f(x)g(x)$
+        \begin{equation*}
+            J_h(x)=g(x)J_f(x)+f(x)J_g(x)
+        \end{equation*}
+\end{itemize}
 
-\subsubsection{Kettenregel}
-$f: \Omega \rightarrow \mathbb R^n, g: D \rightarrow \mathbb R^m, h=g \circ f$
-\begin{equation*}
-    Dh(x)=Dg(f(x))\circ Df(x) \qquad J_h(x)=J_g(f(x))J_f(x)
-\end{equation*}
+
 
 \subsubsection{Differentialoperatoren \qquad $\div(\rot(f)) = 0$}
 \begin{tabular}{l|l}
@@ -80,4 +82,10 @@ Beispiel mit $F:\mathbb R^3 \rightarrow \mathbb R^2$ stetig diffbar $\rightarrow
         \end{pmatrix}
     \end{equation*}
     \item Es gibt eine stetig diffbare Funktion $g(x_0)=\begin{pmatrix}y_0 \\ z_0\end{pmatrix}$ mit $F(x,g_1(x),g_2(x))=0$
+    \item Ableitung bilden: $J_F(x, g_1(x), g_2(x))$ \\
+    \textit{Für Skalarfeld $f: \mathbb R^2 \rightarrow \mathbb R$ beim Auflösen nach $y: y=g(x)$}:
+    \begin{equation*}
+        g'(x)=-\frac{(\partial_xf)(x, g(x))}{(\partial_yf)(x, g(x))}
+    \end{equation*}
+    Beim Auflösen nach $x$ wird Zähler und Nenner vertauscht
 \end{enumerate}

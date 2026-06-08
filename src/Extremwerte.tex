@@ -1,0 +1,30 @@
+\textbf{Notwendige Optimalitätsbed. 1. Ordnung} \\
+$f : \Omega \subset \mathbb R^n \rightarrow \mathbb R$ partiell diffbar und $\hat{x} \in \text{int}(\Omega)$ ein lokales Extremum, dann gilt:
+\begin{center}
+    $\nabla f(\hat x)=0$
+\end{center}
+\vspace{.5em}
+
+\textbf{Hinreichende Optimalitätsbed. 2. Ordnung} \\
+$f$ zweimal stetig diffbar und $\hat x \in \text{int}(\Omega)$ so, dass
+\begin{enumerate}
+    \item $\nabla f(\hat x)=0$
+    \item $H_F(\hat x)$ positiv definit
+\end{enumerate}
+$\Longrightarrow \hat x$ striktes lokales Minimum von $f$ \\
+
+\textbf{Für Sattelpunkt: } $H_f(\hat x)$ indefinit
+\vspace{.5em}
+
+\textbf{Definitheit von $A \in \mathbb R^{n\times n}$ symmetr.}
+\begin{enumerate}
+    \item $\lambda_1 \ge 0 \Leftrightarrow$ positiv semidefinit
+    \item $\lambda_1 > 0 \Leftrightarrow$ positiv definit
+    \item $\lambda_1 \le 0 \Leftrightarrow$ negativ semidefinit
+    \item $\lambda_1 < 0 \Leftrightarrow$ negativ semidefinit
+    \item $A$ hat positive und negative EW $\Leftrightarrow$ indefinit
+\end{enumerate}
+
+\subsection{Kleinste-Quadrat Problem}
+\textbf{Ziel:} Funktion finden, die gemessene Punkte am besten approximiert. \\
+Minimiere $r(x)=||r(x)||^2$ mit $r(x)=b-Ax \Rightarrow \nabla (||r(x)||^2)=A^TAx-A^Tb \stackrel{!}{=} 0$
