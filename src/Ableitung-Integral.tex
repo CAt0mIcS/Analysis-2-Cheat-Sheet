@@ -1,4 +1,3 @@
-
 \begin{sectionbox}
     \subsubsection{partielle Ableitung}
     Eine Skalarfeld $f:\Omega \rightarrow \mathbb R$ mit offener Menge $\Omega$ ist partiell differenzierbar nach $x_i$ (einem ihrere Argumente), wenn der folgende Grenzwert existiert
@@ -34,7 +33,7 @@ $f: \Omega \rightarrow \mathbb R$ ist genau dann total differenzierbar, wenn
 \begin{sectionbox}
     \subsubsection{Mittelwertsatz}
     $\Omega \in \mathbb R^n$ offen, $f:\Omega \rightarrow \mathbb R$ stetig diffbar, $x,y \in \Omega$, sowie die Verbindungsstrecke zwischen $x,y$ in $\Omega$.
-    Dann gibt es ein $\xi\in [x,y]$, so dass 
+    Dann gibt es ein $\xi\in [x,y]$, so dass
     \begin{equation*}
         f(y)-f(x)=\nabla f(\xi)^T(y-x)
     \end{equation*}
@@ -55,8 +54,8 @@ muss für jede Richtung $d$ gelten
 Matrix partieller Ableitung 2. Ordnung
 \begin{equation*}
     H_f(x)=\begin{pmatrix}\partial x_1\partial x_1 f(x)  & \dots  & \partial x_n \partial x_1 f(x) \\
-               \vdots                     & \ddots & \vdots                     \\
-               \partial x_1 \partial x_n f(x) & \dots  & \partial x_n \partial x_n f(x)\end{pmatrix}
+                   \vdots                         & \ddots & \vdots                         \\
+                   \partial x_1 \partial x_n f(x) & \dots  & \partial x_n \partial x_n f(x)\end{pmatrix}
 \end{equation*}
 
 \begin{sectionbox}
@@ -75,6 +74,6 @@ $m=1:$
 $m=2:$
 \begin{align*}
     T_2(a;a+h)=f(a)+\nabla f(a)^\top h+\frac{1}{2}h^\top H_f(a)h \\
-    f \in C^2(\Omega): f(a+h)=T_2(a;a+h)+o(||h||^2)      \\
+    f \in C^2(\Omega): f(a+h)=T_2(a;a+h)+o(||h||^2)              \\
     f \in C^3(\Omega): f(a+h)=T_2(a;a+h)+O(||h||^3)
 \end{align*}

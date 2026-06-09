@@ -1,3 +1,4 @@
+\subsection{Ohne Nebenbedingungen}
 \textbf{Notwendige Optimalitätsbed. 1. Ordnung} \\
 $f : \Omega \subset \mathbb R^n \rightarrow \mathbb R$ partiell diffbar und $\hat{x} \in \text{int}(\Omega)$ ein lokales Extremum, dann gilt:
 \begin{center}
@@ -25,6 +26,44 @@ $\Longrightarrow \hat x$ striktes lokales Minimum von $f$ \\
     \item $A$ hat positive und negative EW $\Leftrightarrow$ indefinit
 \end{enumerate}
 
-\subsection{Kleinste-Quadrat Problem}
+\subsubsection{Kleinste-Quadrat Problem}
 \textbf{Ziel:} Funktion finden, die gemessene Punkte am besten approximiert. \\
-Minimiere $r(x)=||r(x)||^2$ mit $r(x)=b-Ax \Rightarrow \nabla (||r(x)||^2)=A^TAx-A^Tb \stackrel{!}{=} 0$
+Löse die Normalengleichung $A^TAx \stackrel{!}{=} A^Tb$
+
+
+\subsection{Mit Nebenbedingungen}
+\begin{sectionbox}
+    (P) Minimiere $f(x)$ unter der Nebenbedingung $g(x)=0$ mit $f,g : \Omega \subset \mathbb R^n \rightarrow \mathbb R$
+\end{sectionbox}
+\textbf{Zulässige Menge} $\Omega_{\ir ad}=\{x \in \Omega \; | \; g(x)=0 \}$
+
+\begin{emphbox}
+    $\hat x$ ist ein lokales Minimum von (P) \\
+    \begin{itemize}
+        \item[$\Rightarrow$] $\hat x \in \Omega_{\ir ad}$ und $f(\hat x) \le f(x) \; \forall x \in \Omega_{\ir ad}$
+        \item[$\Rightarrow$] $\exists \epsilon > 0: \hat x \in \Omega_{\ir ad}$ und \\
+              $f(\hat x) \le f(x) \; \forall x \in \Omega_{\ir ad} \cap B_\epsilon(\hat x)$
+    \end{itemize}
+\end{emphbox}
+
+\vspace{2mm}
+\textbf{Notwendige Optimalitätsbed. 1. Ordnung}
+\begin{sectionbox}
+    Sei $\hat x$ ein lokales Minimum und es gelte $\nabla g(\hat x)\ne 0$. Dann gibt es ein $\lambda$, sodass
+    \begin{equation*}
+        \nabla L(\hat x, \lambda) = 0
+    \end{equation*}
+    mit
+    \begin{equation*}
+        L(\hat x, \lambda) = f(\hat x) + \lambda g(\hat x)
+    \end{equation*}
+\end{sectionbox}
+
+Es kann auch lokale Minima geben, welche $\nabla g(\hat x)=0$ gilt, dann kann man diese Bedingung nicht anwenden. \\
+\begin{sectionbox}
+    \textbf{Bei Ungleichungen} z.B. min. $f(x,y)$ u.d.N. $x^2 + y^2 \le 1$
+    \begin{enumerate}
+        \item Suche nach lokalen Minima in dieser Menge $\rightarrow$ suche nach allen Minima von $f(x,y)$ und schau, ob $(x,y)$ die Bedingung $x^2+y^2 < 1$ erfüllen
+        \item Lokale Minima am Rand mit $L(x,y,\lambda)=f(x,y) + \lambda(x^2+y^2-1)$
+    \end{enumerate}
+\end{sectionbox}
