@@ -1,0 +1,48 @@
+\textbf{Voraussetzungen}:
+\begin{enumerate}
+    \item $D \subset \mathbb R^n$ offen
+    \item $w: I=[a,b] \rightarrow D$ diffbare Kurve
+    \item $f: D \rightarrow \mathbb R$ stetiges Skalarfeld oder \\
+          $f: D \rightarrow \mathbb R^n$ stetiges Vektorfeld
+\end{enumerate}
+
+\subsection{Gradientenfelder}
+\begin{sectionbox}
+    \subsubsection{Wegzusammenhängend}
+    Eine Menge ist wegzusammenhängend, wenn man von jedem Punkt zu jedem anderen Punkt kommt, ohne die Menge zu verlassen (keine gespaltenen Mengen ohne Verbindungen)
+\end{sectionbox}
+
+\begin{sectionbox}
+    \subsubsection{Einfach wegzusammenhängend}
+    Eine Menge ist einfach wegzusammenhängend, wenn man jede geschlossene Kurve auf einen Punkt zusammenziehen kann, ohne die Menge zu verlassen.
+    Hierbei darf man die Kurve beliebig verschieben.
+    Ist z.B. eine Linie im $\mathbb R^3$ eine Definitionslücke, so ist die Menge nicht einfach zusammenhängend, da man eine Kurve um die Linie nicht zusammenziehen kann (Linie unendlich hoch)
+\end{sectionbox}
+
+\begin{sectionbox}
+    \subsubsection{Wichtige Sätze}
+    Sei $D\subset \mathbb R^n$ eine offene, \textbf{wegzusammenhängende} Menge.
+    Sei $f: D\rightarrow \mathbb R^n$ ein stetiges Vektorfeld.
+    Dann ist äquivalent
+    \begin{cookbox}{Äquivalente Aussagen}
+        \item $f$ ist Gradientenfeld
+        \item Es gibt eine Stammfunktion
+        \item Für alle stetig diffbaren Kurven $w: [a,b] \rightarrow D$ hängt das Kurvenintegral nur von $w(a)$ und $w(b)$ ab
+        \item $\oint_w f \cdot dx=0$ für alle geschlossenen, stetig diffbaren Kurven $w$
+        \item (bei $\mathbb R^3$) $\rot f=0$
+    \end{cookbox}
+
+    \noindent\makebox[\linewidth]{\rule{\columnwidth}{0.4pt}} \\
+
+    Sei $D \subset \mathbb R^n$ eine offene, \textbf{einfach wegzusammenhängende} Menge.
+    Sei $f: D\rightarrow \mathbb R^n$ ein stetiges Vektorfeld.
+    Dann gilt
+    \begin{emphbox}
+        \setlength{\tabcolsep}{0.1em}
+        \begin{tabular}{cl}
+            f ist Gradientenfeld $\Longleftrightarrow$ & $J_f(x)=J_f(x)^T \; \forall x \in D$ \\
+                                                       & $\rot f=0$ in $\mathbb R^3$
+        \end{tabular}
+    \end{emphbox}
+
+\end{sectionbox}
