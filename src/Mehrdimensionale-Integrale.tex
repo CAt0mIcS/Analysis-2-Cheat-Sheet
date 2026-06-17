@@ -1,0 +1,35 @@
+\subsection{Parameterabhängige Integrale}
+\begin{sectionbox}
+    \subsubsection{Stetigkeit}
+    Sei $I=[a,b], J=[c,d], f:I \times J \rightarrow \mathbb R$ auf $I \times J$ stetig
+    \begin{equation*}
+        \Longrightarrow F(x)=\int_c^d f(x,y)\mathrm dy \quad \text{stetig auf } I
+    \end{equation*}
+\end{sectionbox}
+
+\begin{sectionbox}
+    \subsubsection{Differenzierbarkeit}
+    Sei $I=[a,b], J=[c,d], f:I \times J \rightarrow \mathbb R$ und $\partial xf$ auf $I \times J$ stetig
+    \begin{equation*}
+        \Longrightarrow F(x)=\int_{c(x)}^{d(x)} f(x,y)\mathrm dy \quad \text{stetig diffb. auf } I
+    \end{equation*}
+    und
+    \begin{equation*}
+        \resizebox{\hsize}{!}
+        {
+            $F'(x)=\int_{c(x)}^{d(x)} f(x,y)\mathrm dy + f(x, d(x))d'(x) - f(x, c(x))c'(x)$
+        }
+    \end{equation*}
+\end{sectionbox}
+
+\begin{sectionbox}
+    \subsubsection{Fubini}
+    $I=[a,b], J=[c,d], K=[e,f], f: I \times J \times K \rightarrow \mathbb R$ stetig auf $I \times J \times K$
+    \begin{equation*}
+        \resizebox{\hsize}{!}
+        {
+            $\Longrightarrow \int_a^b\int_c^d\int_e^f f(x,y,z)\mathrm dz \mathrm dy \mathrm dx = \int_e^f\int_c^d\int_a^b f(x,y,z)\mathrm dx \mathrm dy \mathrm dz$
+        }
+    \end{equation*}
+
+\end{sectionbox}
