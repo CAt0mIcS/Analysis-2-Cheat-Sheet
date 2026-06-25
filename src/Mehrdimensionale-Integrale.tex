@@ -9,7 +9,7 @@
 
 \begin{sectionbox}
     \subsubsection{Differenzierbarkeit}
-    Sei $I=[a,b], J=[c,d], f:I \times J \rightarrow \mathbb R$ und $\partial xf$ auf $I \times J$ stetig
+    Sei $I=[a,b], J=[c,d], f:I \times J \rightarrow \mathbb R$ und $\partial_x f$ auf $I \times J$ stetig
     \begin{equation*}
         \Longrightarrow F(x)=\int_{c(x)}^{d(x)} f(x,y)\mathrm dy \quad \text{stetig diffb. auf } I
     \end{equation*}
@@ -20,10 +20,16 @@
             $F'(x)=\int_{c(x)}^{d(x)} f(x,y)\mathrm dy + f(x, d(x))d'(x) - f(x, c(x))c'(x)$
         }
     \end{equation*}
+    Weiterhin gilt:
+    \begin{equation*}
+        F'(x)=\partial_x \int_{c}^{d} f(x,y)\mathrm dy = \int_{c}^{d}\partial_x f(x,y) \mathrm dy
+    \end{equation*}
 \end{sectionbox}
 
+
+\subsection{Bereichsintegrale}
 \begin{sectionbox}
-    \subsubsection{Fubini}
+    \subsubsection{Fubini für Bereichsintegrale}
     $I=[a,b], J=[c,d], K=[e,f], f: I \times J \times K \rightarrow \mathbb R$ stetig auf $I \times J \times K$
     \begin{equation*}
         \resizebox{\hsize}{!}
@@ -31,5 +37,66 @@
             $\Longrightarrow \int_a^b\int_c^d\int_e^f f(x,y,z)\mathrm dz \mathrm dy \mathrm dx = \int_e^f\int_c^d\int_a^b f(x,y,z)\mathrm dx \mathrm dy \mathrm dz$
         }
     \end{equation*}
-
 \end{sectionbox}
+
+\begin{sectionbox}
+    \subsubsection{Krummlinige Koordinaten}
+    $\Omega \subset \mathbb R^n$ offen und $\Phi : \Omega \rightarrow \mathbb R^n$ reguläre, stetig diffb. Transformation
+    \begin{equation*}
+        \int_{\Phi(\Omega)}=\int_\Omega f(\Phi(u))|\det{J_\Phi(u)}|\mathrm du
+    \end{equation*}
+\end{sectionbox}
+
+\begin{sectionbox}
+    \subsubsection{Normalbereiche}
+    \begin{enumerate}
+        \item Typ 1: $\iint_\Omega f(x,y)\mathrm d(x,y)=\int_a^b\int_{c(x)}^{d(x)}f(x,y)\mathrm dy \mathrm dx$
+        \item Typ 2: $\iint_\Omega f(x,y)\mathrm d(x,y)=\int_c^d\int_{a(y)}^{b(y)}f(x,y)\mathrm dx \mathrm dy$
+    \end{enumerate}
+\end{sectionbox}
+
+\subsection{Oberflächenintegral}
+\begin{sectionbox}
+    $B \subset \mathbb R^2$ Jordan-messbar, $\varphi: B \rightarrow \mathbb R^3$ stückweise stetig diffbar beschreibt eine Fläche im $\mathbb R^3$
+    \begin{equation*}
+        \varphi(u,v)=\begin{pmatrix}
+            x(u,v) \\ y(u,v) \\ z(u,v)
+        \end{pmatrix}
+    \end{equation*}
+
+    \begin{description}
+        \item[regulär] Falls alle Punkte regulär $\rightarrow$ alle Punkte $\underbrace{\partial_u\varphi(u_0,v_0) \times \partial_v\varphi(u_0,v_0)}_{\text{Normalenvektor (nicht normiert)}} \ne 0$
+    \end{description}
+\end{sectionbox}
+
+\begin{sectionbox}
+    \subsubsection{Flächenintegrale für \textcolor{green}{\text{Skalarfelder}}/\textcolor{red}{\text{Vektorfelder}}}
+    Sei $f : \mathbb R^3 \rightarrow \mathbb R^{\textcolor{red}{3}}$ ein beschränktes \textcolor{green}{\text{Skalarfelder}} / \textcolor{red}{\text{Vektorfelder}}, $\varphi : B \rightarrow \mathbb R^3$ eine Fläche
+    \begin{equation*}
+        \resizebox{\hsize}{!}
+        {
+            $\iint_\varphi f \mathrm dA=\iint_B f(\varphi(u,v)) (\textcolor{green}{||} \partial_u \varphi(u,v) \times \partial_v \varphi(u,v) \textcolor{green}{||})\mathrm d(u,v)$
+        }
+    \end{equation*}
+
+    $\textcolor{red}{\iint_\varphi f \cdot \mathrm dA = \iint_\varphi (f \cdot n)\mathrm dA}$
+\end{sectionbox}
+
+\subsection{Wichtige Integrale}
+\begin{math}\renewcommand{\arraystretch}{1.8}
+    \begin{array}{c|c|c}
+        \sin^2(x)                                           & \frac{1}{2}(1-\cos x)     &                                          \\
+        \cos^2(x)                                           & \frac{1}{2}(1+\cos(2x))   &                                          \\
+        x\ln(ax) -x                                         & \ln(ax)                   & \textstyle \frac{1}{x}                   \\
+        -\ln |\cos(x)|                                      & \tan(x)                   & \frac{1}{\cos^2(x)}                      \\
+        \ln |\sin(x)|                                       & \cot(x)                   & \frac{-1}{\sin^2(x)}                     \\
+        x\arcsin (x)+\sqrt{1-x^2}                           & \arcsin(x)                & \frac{1}{\sqrt{1-x^2}}                   \\
+        x\arccos (x)-\sqrt{1-x^2}                           & \arccos(x)                & -\frac{1}{\sqrt{1-x^2}}                  \\
+        x\arctan (x)-\frac{1}{2} \ln \left| 1+ x^2 \right|  & \arctan (x)               & \frac{1}{1+x^2}                          \\
+        x\arccot (x)+\frac{1}{2} \ln \left| 1+ x^2 \right|  & \arccot (x)               & -\frac{1}{1+x^2}                         \\
+        \int_{u(x)}^{v(x)}g(t) \mathrm dt                   & g(v(x))v'(x)              &                                          \\
+                                                            & -g(u(x))u'(x)             &                                          \\ \hline
+    \end{array}
+\end{math}
+
+Brechstange: $u=\tan(\frac{x}{2})$ \quad $\mathrm dx = \frac{2}{1+u^2} \mathrm du$ \\ $\sin(x) \rightarrow \frac{2u}{1+u^2}$ \qquad $\cos(x) \rightarrow \frac{1-u^2}{1+u^2}$
