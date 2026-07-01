@@ -40,10 +40,10 @@
 \end{sectionbox}
 
 \begin{sectionbox}
-    \subsubsection{Krummlinige Koordinaten}
-    $\Omega \subset \mathbb R^n$ offen und $\Phi : \Omega \rightarrow \mathbb R^n$ reguläre, stetig diffb. Transformation
+    \subsubsection{Krummlinige Koordinaten - Transformationssatz}
+    $\Omega \subset \mathbb R^n$ offen und $\Phi : \Omega \rightarrow \mathbb R^n$ reguläre, stetig diffb. Transformation. $\det J_\Phi\ne 0$ außer für Nullmengen
     \begin{equation*}
-        \int_{\Phi(\Omega)}=\int_\Omega f(\Phi(u))|\det{J_\Phi(u)}|\mathrm du
+        \int_{\Phi(\Omega)} f(x)=\int_\Omega f(\Phi(u))|\det{J_\Phi(u)}|\mathrm du
     \end{equation*}
 \end{sectionbox}
 
@@ -82,11 +82,42 @@
     $\textcolor{red}{\iint_\varphi f \cdot \mathrm dA = \iint_\varphi (f \cdot n)\mathrm dA}$
 \end{sectionbox}
 
+\subsection{Integralsätze}
+Parametrisierung von $\delta \Omega$ (geschlossene, stückweise reguläre Kurve) immer so wählen, dass $\Omega \subset \mathbb R^2$ immer links zur Durchlaufrichtung ist
+\begin{emphbox}
+    \subsubsection{Satz von Green}
+    Sei $\Omega \subset \mathbb R^2$ mit Rand $\delta \Omega$ wie oben. Sei $v: \overline{\Omega} \rightarrow \mathbb R^2$ stetig diffb.
+    \begin{equation*}
+        \iint_{\Omega}\partial_xv_2-\partial_yv_1 \mathrm d(x,y)=\int_{\delta\Omega}v \cdot \mathrm d(x,y)
+    \end{equation*}
+\end{emphbox}
+
+\begin{emphbox}
+    \subsubsection{Satz von Gauß}
+    Sei $\Omega \subset \mathbb R^3$ und sei $\delta \Omega$ durch eine stückweise reguläre, geschlossene Fläche parametrisiert. 
+    Sei $v : \overline{\Omega} \rightarrow \mathbb R^3$ stetig diffb.
+    \begin{equation*}
+        \iiint_\Omega \div (v) \mathrm d(x,y,z) = \iint_{\delta \Omega}v^Tn\mathrm dA=\iint_{\delta \Omega}v \cdot \mathrm dA
+    \end{equation*}
+    mit $n$ Einheitsnormalenvektor der Fläche, der nach außen zeigt.
+\end{emphbox}
+
+\begin{emphbox}
+    \subsubsection{Greensche Formel}
+    Sei $\Omega \subset \mathbb R^3$ und $\delta\Omega$ wie oben. Sei $\varphi,u : \overline{\Omega}\rightarrow \mathbb R$ stetig diffb. bzw. 2x stetig diffb.
+    \begin{equation*}
+        \resizebox{\hsize}{!}
+        {
+            $\iiint_\Omega \Delta u(x) \varphi(x)\mathrm dx=\iint_{\delta \Omega}\varphi(x)\nabla u^T(x)n\mathrm dA - \iiint_\Omega \nabla u(x)\nabla \varphi(x)\mathrm dx$
+        }
+    \end{equation*}
+\end{emphbox}
+
 \subsection{Wichtige Integrale}
 \begin{math}\renewcommand{\arraystretch}{1.8}
     \begin{array}{c|c|c}
-        \sin^2(x)                                           & \frac{1}{2}(1-\cos x)     &                                          \\
-        \cos^2(x)                                           & \frac{1}{2}(1+\cos(2x))   &                                          \\
+        \sin^2(x)                                           & \frac{1}{2}(x - \cos x \sin x)     &                                          \\
+        \cos^2(x)                                           & \frac{1}{2}(\cos x \sin x + x)   &                                          \\
         x\ln(ax) -x                                         & \ln(ax)                   & \textstyle \frac{1}{x}                   \\
         -\ln |\cos(x)|                                      & \tan(x)                   & \frac{1}{\cos^2(x)}                      \\
         \ln |\sin(x)|                                       & \cot(x)                   & \frac{-1}{\sin^2(x)}                     \\
